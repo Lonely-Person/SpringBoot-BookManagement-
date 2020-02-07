@@ -1,0 +1,78 @@
+#端口
+server:
+    port: 8080
+spring:
+    #数据库的配置
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql:///springbootjpa?serverTimezone=Hongkong
+        username: root
+        password: qisini
+        type: com.zaxxer.hikari.HikariDataSource
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+        show-sql: true
+        database: mysql
+        properties:
+            hiberante:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect  # 为jpa指定方言
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    application:
+        name: freemarker
+    #  thymeleaf:
+    #    mode: HTML5
+    #    encoding: utf-8
+    #    servlet:
+    #      content-type: text/html
+    #    cache: false
+    #    prefix: classpath:/templates/
+    #    suffix: .html
+    freemarker:
+        allow-request-override: false
+        allow-session-override: false
+        cache: false
+        charset: UTF-8
+        content-type: text/html
+        check-template-location: true
+        expose-request-attributes: false
+        expose-session-attributes: false
+        enabled: true
+        prefer-file-system-access: true
+        template-loader-path: classpath:/templates/  # 默认配置就是这个
+        suffix: .ftl  # 默认配置就是这个
+        settings:
+            template_update_delay: 0
+            default_encoding: utf-8
+            classic_compatible: true
+    mvc:
+        static-path-pattern: /**
+        date-format: yyyy-MM-dd
+    resources:
+        static-locations: classpath:/static/
+    aop:
+        proxy-target-class: true
+
+
+
+    # redis配置
+#    redis:
+#        database: 0
+#        password: 123
+#        port: 6379
+#        host: localhost
+#        lettuce:
+#            pool:
+#                min-idle: 5
+#                max-idle: 10
+#                max-active: 8
+#                max-wait: 1ms
+#            shutdown-timeout: 100ms
+
+
+
+
+
+
+
+
